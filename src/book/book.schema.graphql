@@ -1,0 +1,24 @@
+type Book {
+  id: ID!
+  title: String!
+  price: Int
+}
+
+type Query {
+  books: [Book]
+  book(input: FindBookInput!): Book
+}
+
+input FindBookInput {
+  id: Int!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput): Book!
+}
+
+input CreateBookInput {
+  id: Int!
+  title: String!
+  price: Int!
+}
