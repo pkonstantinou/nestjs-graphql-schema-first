@@ -1,4 +1,4 @@
-import { Book } from './book.schema';
+import { Book } from './book.entity';
 import books from '../data/books';
 import { CreateBookInput } from '../graphql';
 
