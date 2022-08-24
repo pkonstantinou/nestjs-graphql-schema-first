@@ -3,7 +3,7 @@ import books from '../data/books';
 import { CreateBookInput } from '../graphql';
 
 export class BookService {
-  books: Book[];
+  books: Partial<Book>[];
 
   constructor() {
     this.books = books;
@@ -23,9 +23,18 @@ export class BookService {
     return null;
   }
 
+  findByAuthorId(authorId: number) {
+    const books = this.books.filter((book) => book.author === authorId);
+
+    if (books.length) {
+      return books;
+    }
+
+    return null;
+  }
+
   createBook(book: CreateBookInput) {
     this.books = [book, ...this.books];
-    console.log(this.books);
 
     return book;
   }

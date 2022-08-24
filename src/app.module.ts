@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { join } from 'path';
 import { GraphQLModule } from '@nestjs/graphql';
 import { BookModule } from './book/book.module';
+import { AuthorModule } from './author/author.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { BookModule } from './book/book.module';
       playground: true,
     }),
     BookModule,
+    AuthorModule,
   ],
   controllers: [],
   providers: [],

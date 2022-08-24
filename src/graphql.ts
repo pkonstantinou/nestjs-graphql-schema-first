@@ -18,15 +18,23 @@ export interface CreateBookInput {
     price: number;
 }
 
-export interface Book {
+export interface Author {
     id: string;
-    title: string;
-    price?: Nullable<number>;
+    name: string;
+    books?: Nullable<Nullable<Book>[]>;
 }
 
 export interface IQuery {
+    authors(): Nullable<Nullable<Author>[]> | Promise<Nullable<Nullable<Author>[]>>;
     books(): Nullable<Nullable<Book>[]> | Promise<Nullable<Nullable<Book>[]>>;
     book(input: FindBookInput): Nullable<Book> | Promise<Nullable<Book>>;
+}
+
+export interface Book {
+    id: string;
+    title: string;
+    price: number;
+    author: Author;
 }
 
 export interface IMutation {
