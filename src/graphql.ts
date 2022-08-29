@@ -16,6 +16,7 @@ export interface CreateBookInput {
     id: number;
     title: string;
     price: number;
+    author: number;
 }
 
 export interface Author {

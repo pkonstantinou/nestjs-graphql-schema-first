@@ -22,4 +22,5 @@ input CreateBookInput {
   id: Int!
   title: String!
   price: Int!
+  author: Int!
 }
